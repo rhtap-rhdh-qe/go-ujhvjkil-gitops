@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: go-ujhvjkil
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: go-ujhvjkil 
+  name: go-ujhvjkil
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: go-ujhvjkil
+    weight: 100 
